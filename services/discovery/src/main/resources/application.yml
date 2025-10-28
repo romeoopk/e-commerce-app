@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: discovery-service
+  profiles:
+    active: native
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    config:
+      fail-fast: false
+      # Add retry configuration
+      retry:
+        initial-interval: 1000
+        max-attempts: 6
+        max-interval: 2000
